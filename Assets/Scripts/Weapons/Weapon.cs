@@ -85,7 +85,7 @@ public class Weapon : MonoBehaviour {
 
 	void initializeBulletPool() {
 		bulletPool = new List<GameObject>();
-		Debug.Log (playerObj.name);
+		//Debug.Log (playerObj.name);
 		for (int i = 0; i < pooledBulletCount; i++) {
 			bulletPool.Add((GameObject) Instantiate(bulletPrefab));
 			// TODO Loop through the player list and remove the cllision with the list (team mates in the case of a no FF game)
@@ -106,7 +106,7 @@ public class Weapon : MonoBehaviour {
 			}
 		}
 		spawnLocationTotal = bulletSpawns.Count;
-		Debug.Log("Getting " + spawnLocationTotal + " Spawn Locations");
+		//Debug.Log("Getting " + spawnLocationTotal + " Spawn Locations");
 	}
 	
 	void Update() {

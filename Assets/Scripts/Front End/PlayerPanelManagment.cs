@@ -81,6 +81,8 @@ public class PlayerPanelManagment : MonoBehaviour {
 				state = PanelState.Ready;
 				readyManagerScript.ReadyCheck();
 				player.character = GameManager.Instance.characterList[CharacterID];
+				GameManager.Instance.playerList[player.PlayerNumber].character = player.character;
+				//Debug.Log(GameManager.Instance.playerList[player.PlayerNumber].character.GetDeathText());
 				StateUpdate();
 			}
 		}

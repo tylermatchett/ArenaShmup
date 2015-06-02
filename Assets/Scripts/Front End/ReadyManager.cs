@@ -22,6 +22,8 @@ public class ReadyManager : MonoBehaviour {
 	}
 
 	void Update() {
+		ReadyCheck();
+
 		if (AllPlayersReady) {
 			if (countdown <= -0.25f) {
 				// TODO Advance to level select

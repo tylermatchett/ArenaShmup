@@ -227,6 +227,7 @@
      <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraTracking.cs" />
      <Compile Include="Assets\Scripts\Camera\FakeLOD_GaussianBlur.cs" />
+     <Compile Include="Assets\Scripts\Camera\MatchCameraOrthoSize.cs" />
      <Compile Include="Assets\Scripts\Camera\ParallaxObject.cs" />
      <Compile Include="Assets\Scripts\Camera\ParallaxQuad.cs" />
      <Compile Include="Assets\Scripts\Camera\ScreenShake.cs" />
@@ -251,6 +252,9 @@
      <Compile Include="Assets\Scripts\ObjectScripts\AstroidRotation.cs" />
      <Compile Include="Assets\Scripts\ObjectScripts\DestroyAfterSetTime.cs" />
      <Compile Include="Assets\Scripts\ObjectScripts\DestructableObject.cs" />
+     <Compile Include="Assets\Scripts\ObjectScripts\DisableAfterSetTime.cs" />
+     <Compile Include="Assets\Scripts\ObjectScripts\FadeTextOut.cs" />
+     <Compile Include="Assets\Scripts\ObjectScripts\FloatingText.cs" />
      <Compile Include="Assets\Scripts\ObjectScripts\ObjectCollision.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerCollision.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerFacingDirection.cs" />
@@ -260,6 +264,7 @@
      <Compile Include="Assets\Scripts\Player Scripts\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\Projectiles\projectile_destroy.cs" />
      <Compile Include="Assets\Scripts\Projectiles\projectile_move.cs" />
+     <Compile Include="Assets\Scripts\Projectiles\projectile_shakeScreenOnDetonate.cs" />
      <Compile Include="Assets\Scripts\Projectiles\projectile_stats.cs" />
      <Compile Include="Assets\Scripts\RenderWorkArounds\TrailRendererSortingLayerFix.cs" />
      <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />

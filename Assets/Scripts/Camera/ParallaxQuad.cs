@@ -93,7 +93,7 @@ public class ParallaxQuad : MonoBehaviour {
 
 
 		//fit to screen
-		localScale.y = cam.orthographicSize * 2f;
+		localScale.y = cam.orthographicSize * 2f + 3f;
 		localScale.x = localScale.y * cam.aspect;
 		transform.localScale = localScale;
 		

@@ -112,6 +112,7 @@ public class GameManager : MonoBehaviour {
 		characterList.Add(((GameObject) Resources.Load("Prefabs/CharacterSelectors/cs_BlueLeader")).GetComponent<Character>());
 		characterList.Add(((GameObject) Resources.Load("Prefabs/CharacterSelectors/cs_RedTwo")).GetComponent<Character>());
 		characterList.Add(((GameObject) Resources.Load("Prefabs/CharacterSelectors/cs_TealAvenger")).GetComponent<Character>());
+		characterList.Add(((GameObject) Resources.Load("Prefabs/CharacterSelectors/cs_YellowMarauder")).GetComponent<Character>());
 
 		// Init Levels
 		//levelList [0] = new Level ("Dev Map", "level_dev_test", Vector2.zero);

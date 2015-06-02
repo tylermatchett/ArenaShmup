@@ -22,4 +22,11 @@ public class projectile_move : MonoBehaviour {
 		float angle = Mathf.Atan2(direction.normalized.y, direction.normalized.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+		if (GetComponent<projectile_stats> ().playerReference != collision.gameObject) {
+			Vector2 reflect = direction - 2f * Vector2.Dot (direction, collision.contacts [0].normal) * collision.contacts [0].normal;
+			direction = reflect;
+		}
+	}
 }

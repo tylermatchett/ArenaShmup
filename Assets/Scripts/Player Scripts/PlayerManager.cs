@@ -20,6 +20,15 @@ public class PlayerManager : MonoBehaviour {
 	public GameObject DeathExplosionFX;
 	public GameObject lastPlayerToHitMe;
 
+	public GameObject textObj = null;
+	public Text wordsText = null;
+	public enum WordsToSay {
+		Hit,
+		Kill,
+		Victory,
+		Death
+	}
+
 	public void Start() {
 		matchManager = GameObject.FindGameObjectWithTag("MatchManager").GetComponent<MatchManager>();
 		shakeCamera = Camera.main.GetComponent<ScreenShake>();
@@ -56,6 +65,11 @@ public class PlayerManager : MonoBehaviour {
 		gameObject.SetActive(true);
 	}
 
+	public void SetCharacterText(GameObject go) {
+		textObj = go;
+		wordsText = go.GetComponent<Text>();
+	}
+
 	public void Despawn() {
 		playerState = PlayerState.Dead;
 		gameObject.BroadcastMessage("EndFire", SendMessageOptions.DontRequireReceiver);
@@ -90,6 +104,9 @@ public class PlayerManager : MonoBehaviour {
 			SlowMoForDeath ();
 			Invoke ("Die", 0.05f);
 		} else {
+			if (Random.Range (0f, 1f) > 0.80f) {
+				Invoke("HitWords", 0.25f);
+			}
 			shakeCamera.Shake(5f, 0.1f);
 			SlowMoOnHit();
 		}
@@ -121,9 +138,43 @@ public class PlayerManager : MonoBehaviour {
 		matchManager.MatchStatsTracker.setTeamDeath(player.TeamID);
 		matchManager.MatchStatsTracker.setTeamKill(lastPlayerToHitMe.GetComponent<PlayerManager>().player.TeamID);
 
+		if (Random.Range (0f, 1f) > 0.25f) {
+			SayWords(WordsToSay.Death);
+		} else {
+			lastPlayerToHitMe.GetComponent<PlayerManager>().SayWords(WordsToSay.Kill);
+		}
+
 		Despawn();
 	}
-	
+
+	void HitWords() {
+		SayWords(WordsToSay.Hit);
+	}
+
+	void SayWords(WordsToSay wordSwitch) {
+		// Get death text
+		if (!textObj.activeSelf) {
+			string whatCharacterWillSay = "";
+
+			switch (wordSwitch) {
+			case WordsToSay.Hit:
+				whatCharacterWillSay = "\"" + player.character.GetGettingHitText() + "\"";
+				break;
+			case WordsToSay.Kill:
+				whatCharacterWillSay = "\"" + player.character.GetKillText() + "\"";
+				break;
+			case WordsToSay.Death:
+				whatCharacterWillSay = "\"" + player.character.GetDeathText() + "\"";
+				break;
+			}
+		
+			wordsText.text = whatCharacterWillSay;
+
+			textObj.transform.position = transform.position;
+			textObj.SetActive (true);
+		}
+	}
+
 	public void RoundStarting() {
 		playerState = PlayerState.Alive;
 		gameObject.BroadcastMessage("ResetWeapon", SendMessageOptions.DontRequireReceiver);

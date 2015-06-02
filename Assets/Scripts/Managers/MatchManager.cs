@@ -60,12 +60,19 @@ public class MatchManager : MonoBehaviour {
 	public List<Image> playerHPScaleList = new List<Image>();
 	public List<Image> playerAmmoScaleList = new List<Image>();
 	public List<Text> playerAmmoRemainingList = new List<Text>();
+	public GameObject[] characterTextList;
 
 	bool delayedRoundEnd = false;
 
 	void Start () {
 		matchPhase = MatchPhase.StartMatch;
 		roundPhase = RoundPhase.StartRound;
+
+		characterTextList = GameObject.FindGameObjectsWithTag ("deathText");
+
+		foreach (GameObject go in characterTextList) {
+			go.SetActive(false);
+		}
 
 		// if the levelmanager object exists get a ref to the script
 		/*if (levelManagerObject) {
@@ -174,7 +181,7 @@ public class MatchManager : MonoBehaviour {
 				// Create a player prefab and add the player to the prefab script
 				playerObjectList.Add((GameObject) Instantiate(playerPrefab));
 				playerObjectList[playerObjectList.Count-1].GetComponent<PlayerManager>().player = GameManager.Instance.playerList[i];
-
+				playerObjectList[playerObjectList.Count-1].GetComponent<PlayerManager>().SetCharacterText(characterTextList[playerObjectList.Count-1]);
 				playerObjectList[playerObjectList.Count-1].GetComponent<PlayerManager>().CreatePlayerCharacter();
 				playerObjectList[playerObjectList.Count-1].GetComponent<PlayerManager>().CreatePlayerUI(playerPanelList[i],playerNameList[i], playerHPScaleList[i], playerAmmoScaleList[i], playerAmmoRemainingList[i]);
 				playerObjectList[playerObjectList.Count-1].SendMessage("MatchPaused", SendMessageOptions.DontRequireReceiver);

@@ -23,6 +23,13 @@ public class projectile_destroy : MonoBehaviour {
 	}
 
 	public void Despawn() {
+		if (onDestroyPrefab != null) {
+			GameObject Explosion = (GameObject)Instantiate(onDestroyPrefab, transform.position, transform.rotation);
+			Explosion.GetComponent<projectile_stats>().damage = GetComponent<projectile_stats>().damage;
+			Explosion.GetComponent<projectile_stats>().playerReference = GetComponent<projectile_stats>().playerReference;
+			Camera.main.GetComponent<ScreenShake>().Shake(5f, 0.05f);
+		}
+
 		gameObject.SetActive(false);
 	}
 }
