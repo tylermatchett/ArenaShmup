@@ -18,6 +18,8 @@ public class PlayerPanelManagment : MonoBehaviour {
 
 	public int CharacterID;
 
+	bool alternateForm = false;
+
 	public Player player;
 	public enum PanelState {
 		PressStart,
@@ -66,6 +68,30 @@ public class PlayerPanelManagment : MonoBehaviour {
 					CharacterID = 0;
 				}
 			}
+			
+			if (player.device.LeftTrigger.WasPressed) {
+				// Match Type
+				if (GameManager.Instance.matchType == GameManager.MatchType.Kills) {
+					GameManager.Instance.matchType = GameManager.MatchType.Rounds;
+				} else {
+					GameManager.Instance.matchType = GameManager.MatchType.Kills;
+				}
+			}
+
+			if (player.device.RightTrigger.WasPressed) {
+				// Match Goal
+				// Kills & Rounds: Ft3, Ft5, Ft7, Ft9, Ft10, Ft15, Ft20
+				GameManager.Instance.matchGoalCounter++;
+				if (GameManager.Instance.matchGoalCounter >= GameManager.Instance.matchGoals.Count) {
+					GameManager.Instance.matchGoalCounter = 0;
+				}
+				GameManager.Instance.matchGoal = GameManager.Instance.matchGoals[GameManager.Instance.matchGoalCounter];
+			}
+
+			if (player.device.Action3.WasPressed) {
+				// Change character to alt
+				alternateForm = !alternateForm;
+			}
 
 			if (player.device.Action4.WasPressed) {
 				// Change character
@@ -77,13 +103,19 @@ public class PlayerPanelManagment : MonoBehaviour {
 
 			// On Ready, Set the character in the player based on the CharacterID
 			if (player.device.Action1.WasPressed) {
-				player.Ready = true;
-				state = PanelState.Ready;
-				readyManagerScript.ReadyCheck();
-				player.character = GameManager.Instance.characterList[CharacterID];
-				GameManager.Instance.playerList[player.PlayerNumber].character = player.character;
-				//Debug.Log(GameManager.Instance.playerList[player.PlayerNumber].character.GetDeathText());
-				StateUpdate();
+				if (!GameManager.Instance.characterList_Lock[CharacterID]) {
+					player.Ready = true;
+					state = PanelState.Ready;
+					readyManagerScript.ReadyCheck();
+					if (!alternateForm) {
+						player.character = GameManager.Instance.characterList[CharacterID];
+					} else {
+						player.character = GameManager.Instance.characterList_alt[CharacterID];
+					}
+					GameManager.Instance.characterList_Lock[CharacterID] = true;
+					GameManager.Instance.playerList[player.PlayerNumber].character = player.character;
+					StateUpdate();
+				}
 			}
 		}
 
@@ -91,6 +123,8 @@ public class PlayerPanelManagment : MonoBehaviour {
 			if (player.Ready) {
 				player.Ready = false;
 				state = PanelState.CharacterSelect;
+				
+				GameManager.Instance.characterList_Lock[CharacterID] = false;
 				readyManagerScript.ReadyCheck();
 
 				StateUpdate();
@@ -105,11 +139,22 @@ public class PlayerPanelManagment : MonoBehaviour {
 	}
 
 	private void UpdatePlayerPanel() {
-		CharacterName.text = GameManager.Instance.characterList[CharacterID].Name;
-		CharacterWeapon.text = GameManager.Instance.characterList[CharacterID].primaryWeapon;
-		CharacterAbility.text = GameManager.Instance.characterList[CharacterID].Ability;
-		CharacterSelectImage.sprite = GameManager.Instance.characterList[CharacterID].displayPortrait;
-		CharacterSelectImage.color = new Color(1f, 1f, 1f, 1f);
+		if (!alternateForm) {
+			CharacterName.text = GameManager.Instance.characterList [CharacterID].Name;
+			CharacterWeapon.text = GameManager.Instance.characterList [CharacterID].primaryWeapon;
+			CharacterAbility.text = GameManager.Instance.characterList [CharacterID].Ability;
+			CharacterSelectImage.sprite = GameManager.Instance.characterList [CharacterID].displayPortrait;
+		} else {
+			CharacterName.text = GameManager.Instance.characterList_alt [CharacterID].Name;
+			CharacterWeapon.text = GameManager.Instance.characterList_alt [CharacterID].primaryWeapon;
+			CharacterAbility.text = GameManager.Instance.characterList_alt [CharacterID].Ability;
+			CharacterSelectImage.sprite = GameManager.Instance.characterList_alt [CharacterID].displayPortrait;
+		}
+		if (GameManager.Instance.characterList_Lock [CharacterID]) {
+			CharacterSelectImage.color = new Color (0.5f, 0.5f, 0.5f, 1f);
+		} else {
+			CharacterSelectImage.color = new Color (1f, 1f, 1f, 1f);
+		}
 
 		switch (player.TeamID) {
 		case 0:

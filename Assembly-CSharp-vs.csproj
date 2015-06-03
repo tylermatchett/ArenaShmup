@@ -235,6 +235,7 @@
      <Compile Include="Assets\Scripts\Data\Player.cs" />
      <Compile Include="Assets\Scripts\Data\Profile.cs" />
      <Compile Include="Assets\Scripts\Front End\ControllerAssignment.cs" />
+     <Compile Include="Assets\Scripts\Front End\DisplayRoundTypeAndGoal.cs" />
      <Compile Include="Assets\Scripts\Front End\MenuManagement.cs" />
      <Compile Include="Assets\Scripts\Front End\PlayerPanelManagment.cs" />
      <Compile Include="Assets\Scripts\Front End\PulseText.cs" />

@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour {
 	public Player[] playerList = new Player[4];
 	public bool[] playerNumberList = new bool[] {false, false, false, false};
 	public List<Character> characterList;
+	public List<Character> characterList_alt;
+	public List<bool> characterList_Lock;
 	//public Level[] levelList = new Level[2];
 	//public Level SelectedLevel;
 
@@ -35,10 +37,12 @@ public class GameManager : MonoBehaviour {
 		Kills,
 		Rounds
 	}
+	public List<int> matchGoals;
+	public int matchGoalCounter = 1;
 
 	[Header ("Match Settings")]
 	public MatchType matchType = MatchType.Kills;
-	public int matchGoal = 3;
+	public int matchGoal = 5;
 
 	[Header ("Slow Time")]
 	public bool slowTime = false;
@@ -114,6 +118,16 @@ public class GameManager : MonoBehaviour {
 		characterList.Add(((GameObject) Resources.Load("Prefabs/CharacterSelectors/cs_TealAvenger")).GetComponent<Character>());
 		characterList.Add(((GameObject) Resources.Load("Prefabs/CharacterSelectors/cs_YellowMarauder")).GetComponent<Character>());
 
+		// init alt character list
+		characterList_alt = new List<Character>();
+		characterList_alt.Add(((GameObject) Resources.Load("Prefabs/CharacterSelectors/cs_BlueLeader_alt")).GetComponent<Character>());
+		characterList_alt.Add(((GameObject) Resources.Load("Prefabs/CharacterSelectors/cs_RedTwo_alt")).GetComponent<Character>());
+		characterList_alt.Add(((GameObject) Resources.Load("Prefabs/CharacterSelectors/cs_TealAvenger_alt")).GetComponent<Character>());
+		characterList_alt.Add(((GameObject) Resources.Load("Prefabs/CharacterSelectors/cs_YellowMarauder_alt")).GetComponent<Character>());
+
+		characterList_Lock = new List<bool>() {false, false, false, false};
+
+		matchGoals = new List<int>() {3, 5, 7, 9, 10, 15, 20};
 		// Init Levels
 		//levelList [0] = new Level ("Dev Map", "level_dev_test", Vector2.zero);
 		//levelList [1] = new Level ("Space Elevator", "level_space_elevator", Vector2.zero);

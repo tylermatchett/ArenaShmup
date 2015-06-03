@@ -1,14 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Projectiles\projectile_destroy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Managers\GameManager.cs">
     <Files>
-      <File FileName="ArenaShmup.sln" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Projectiles\projectile_stats.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Projectiles\projectile_destroy.cs" Line="30" Column="51" />
-      <File FileName="Assets\Scripts\Projectiles\projectile_move.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player Scripts\PlayerCollision.cs" Line="33" Column="43" />
-      <File FileName="Assets\Scripts\ObjectScripts\DestructableObject.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="41" Column="33" />
+      <File FileName="Assets\Scripts\Front End\PlayerPanelManagment.cs" Line="88" Column="109" />
+      <File FileName="Assets\Scripts\Front End\ReadyManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Front End\DisplayRoundTypeAndGoal.cs" Line="20" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
