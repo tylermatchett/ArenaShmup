@@ -56,7 +56,7 @@ public class ReadyManager : MonoBehaviour {
 			}
 		}
 
-		if ((playerCount > 0) && (readyCount == playerCount)) {
+		if ((playerCount > 1) && (readyCount == playerCount)) {
 			AllPlayersReady = true;
 		} else {
 			AllPlayersReady = false;

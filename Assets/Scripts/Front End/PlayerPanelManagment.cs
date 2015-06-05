@@ -28,7 +28,10 @@ public class PlayerPanelManagment : MonoBehaviour {
 	}
 	public PanelState state = PanelState.PressStart;
 
-	void Start () {
+    PlayMenuSounds menuSounds;
+
+    void Start() {
+        menuSounds = GameObject.FindGameObjectWithTag("fe_sfx").GetComponent<PlayMenuSounds>();
 		DisablePanels();
 		StartPanel.SetActive(true);
 		readyManagerScript = ReadyManagerObject.GetComponent<ReadyManager>();
@@ -51,7 +54,8 @@ public class PlayerPanelManagment : MonoBehaviour {
 
 	private void ManagePlayerInput() {
 		if (state == PanelState.CharacterSelect) {
-			if (player.device.Direction.Left.WasPressed) {
+            if (player.device.Direction.Left.WasPressed) {
+                menuSounds.PlaySwitchSFX();
 				//Debug.Log("Left was pressed");
 				// Change character
 				CharacterID--;
@@ -60,7 +64,8 @@ public class PlayerPanelManagment : MonoBehaviour {
 				}
 			}
 
-			if (player.device.Direction.Right.WasPressed) {
+            if (player.device.Direction.Right.WasPressed) {
+                menuSounds.PlaySwitchSFX();
 				//Debug.Log("Right was pressed");
 				// Change character
 				CharacterID++;
@@ -68,8 +73,9 @@ public class PlayerPanelManagment : MonoBehaviour {
 					CharacterID = 0;
 				}
 			}
-			
-			if (player.device.LeftTrigger.WasPressed) {
+
+            if (player.device.LeftTrigger.WasPressed) {
+                menuSounds.PlaySwitchSFX();
 				// Match Type
 				if (GameManager.Instance.matchType == GameManager.MatchType.Kills) {
 					GameManager.Instance.matchType = GameManager.MatchType.Rounds;
@@ -78,7 +84,8 @@ public class PlayerPanelManagment : MonoBehaviour {
 				}
 			}
 
-			if (player.device.RightTrigger.WasPressed) {
+            if (player.device.RightTrigger.WasPressed) {
+                menuSounds.PlaySwitchSFX();
 				// Match Goal
 				// Kills & Rounds: Ft3, Ft5, Ft7, Ft9, Ft10, Ft15, Ft20
 				GameManager.Instance.matchGoalCounter++;
@@ -103,7 +110,8 @@ public class PlayerPanelManagment : MonoBehaviour {
 
 			// On Ready, Set the character in the player based on the CharacterID
 			if (player.device.Action1.WasPressed) {
-				if (!GameManager.Instance.characterList_Lock[CharacterID]) {
+                if (!GameManager.Instance.characterList_Lock[CharacterID]) {
+                    menuSounds.PlaySelectSFX();
 					player.Ready = true;
 					state = PanelState.Ready;
 					readyManagerScript.ReadyCheck();
@@ -119,7 +127,8 @@ public class PlayerPanelManagment : MonoBehaviour {
 			}
 		}
 
-		if (player.device.Action2.WasPressed) {
+        if (player.device.Action2.WasPressed) {
+            menuSounds.PlayBackSFX();
 			if (player.Ready) {
 				player.Ready = false;
 				state = PanelState.CharacterSelect;

@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour {
 		for (int i = 0; i < playerList.Length; i++) {
 			if (playerList[i] != null) {
 				if (int.Parse(playerList[i].device.Meta.Substring(playerList[i].device.Meta.IndexOf("[id: ") + "[id: ".Length, 1)) == int.Parse(d.Meta.Substring(d.Meta.IndexOf("[id: ") + "[id: ".Length, 1))) {
-					Debug.Log("Controller Already Set");
+					//Debug.Log("Controller Already Set");
 					return true;
 				}
 			}

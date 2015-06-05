@@ -30,10 +30,8 @@ public class MatchCountdownScript : MonoBehaviour {
 
 	void Update () {
 		if (Activated) {
-			if (timer > 4f) {
-				timerDisplay.text = "";
-			} else if (timer > 1f) {
-				timerDisplay.text = Mathf.FloorToInt(timer).ToString ();
+			if (timer > 1f) {
+                timerDisplay.text = "Round " + matchManager.roundCount.ToString();//Mathf.FloorToInt(timer).ToString ();
 			} else {
 				timerDisplay.text = "Fight!";
 			}
@@ -41,9 +39,14 @@ public class MatchCountdownScript : MonoBehaviour {
 			if (timer <= 0f) {
 				DestroyMatchCounter ();
 			}
+            if (timer > 1f) {
 
-			tempDistance = timer % 1f;
-			timerDisplay.rectTransform.anchoredPosition = textOrigin + new Vector2(distanceOfPan * tempDistance*tempDistance*tempDistance*tempDistance, 0f);
+                tempDistance = (timer+1f) / timerDefault;
+                timerDisplay.rectTransform.anchoredPosition = textOrigin + new Vector2(distanceOfPan * tempDistance * tempDistance * tempDistance * tempDistance, 0f);
+            } else {
+                tempDistance = timer % 1f;
+                timerDisplay.rectTransform.anchoredPosition = textOrigin + new Vector2(distanceOfPan * tempDistance * tempDistance * tempDistance * tempDistance, 0f);
+            }
 
 			timer -= Time.deltaTime;
 		} else {

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.ArenaShmup.CSharp", "UnityVS.ArenaShmup.CSharp.csproj", "{476C278C-5CD8-2E4D-3444-959C37E67E6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.ArenaShmup.CSharp.Editor", "UnityVS.ArenaShmup.CSharp.Editor.csproj", "{6F00E404-4938-47A9-EADA-D0C8A0B088A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{476C278C-5CD8-2E4D-3444-959C37E67E6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{476C278C-5CD8-2E4D-3444-959C37E67E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{476C278C-5CD8-2E4D-3444-959C37E67E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{476C278C-5CD8-2E4D-3444-959C37E67E6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F00E404-4938-47A9-EADA-D0C8A0B088A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F00E404-4938-47A9-EADA-D0C8A0B088A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F00E404-4938-47A9-EADA-D0C8A0B088A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F00E404-4938-47A9-EADA-D0C8A0B088A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

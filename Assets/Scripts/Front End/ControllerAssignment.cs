@@ -14,7 +14,17 @@ public class ControllerAssignment : MonoBehaviour {
 
 	// used for backing out to Main Menu
 	bool BackingOut = false;
-	float timerToBackOutCounter = 0f;
+    float timerToBackOutCounter = 0f;
+
+    PlayMenuSounds menuSounds;
+
+    void Start() {
+        menuSounds = GameObject.FindGameObjectWithTag("fe_sfx").GetComponent<PlayMenuSounds>();
+        // Reset selected Characters
+        for (int i = 0; i < GameManager.Instance.characterList_Lock.Count; i++) {
+            GameManager.Instance.characterList_Lock[i] = false;
+        }
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -23,7 +33,8 @@ public class ControllerAssignment : MonoBehaviour {
 		InputDevice device = InputManager.ActiveDevice;
 
 		if (device.MenuWasPressed) {
-			if (!GameManager.Instance.DeviceLocked(device)) {
+            if (!GameManager.Instance.DeviceLocked(device)) {
+                menuSounds.PlaySelectSFX();
 				// Create a player and give them the active device
 				// Assign that player to correct panel script based on player number
 				int pn = getPlayerNumber();
@@ -61,7 +72,8 @@ public class ControllerAssignment : MonoBehaviour {
 
 		if (BackingOut) {
 			timerToBackOutCounter += Time.deltaTime;
-			if (timerToBackOutCounter > 1f) {
+            if (timerToBackOutCounter > 1f) {
+                menuSounds.PlayBackSFX();
 				GameManager.Instance.LoadState("main_menu");
 			}
 		} else {

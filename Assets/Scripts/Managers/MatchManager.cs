@@ -30,7 +30,7 @@ public class MatchManager : MonoBehaviour {
 	public MatchStats MatchStatsTracker;
 
 	// Round vars
-	int roundCount = 1;
+	public int roundCount = 1;
 	public bool debug_getMatchStats = false;
 	public bool countdownActive = false;
 
@@ -61,7 +61,10 @@ public class MatchManager : MonoBehaviour {
 	public List<Image> playerAmmoScaleList = new List<Image>();
 	public List<Text> playerAmmoRemainingList = new List<Text>();
 	public GameObject[] characterTextList;
+    public GameObject[] sfx_smallExplosionList;
+    public GameObject MatchRoundResultsObject;
 
+    bool initMatchFinished = false;
 	bool delayedRoundEnd = false;
 
 	void Start () {
@@ -69,31 +72,47 @@ public class MatchManager : MonoBehaviour {
 		roundPhase = RoundPhase.StartRound;
 
 		characterTextList = GameObject.FindGameObjectsWithTag ("deathText");
+        sfx_smallExplosionList = GameObject.FindGameObjectsWithTag("sfx_SmallExplosion");
 
-		foreach (GameObject go in characterTextList) {
-			go.SetActive(false);
-		}
+        foreach (GameObject go in characterTextList) {
+            go.SetActive(false);
+        }
+        foreach (GameObject go in sfx_smallExplosionList) {
+            go.SetActive(false);
+        }
 
-		// if the levelmanager object exists get a ref to the script
-		/*if (levelManagerObject) {
-			levelManager = levelManagerObject.GetComponent<LevelManager> ();
-		}*/
 		playerSpawnOffset = new Vector2[] {new Vector3(spawnRadius, 0f, 0f), new Vector3(0f, -spawnRadius, 0f), new Vector3(0f, spawnRadius, 0f), new Vector3(-spawnRadius, 0f, 0f)};
 	}
+
+    public GameObject GetSmallExplosionSFXInstance() {
+        GameObject temp = null;
+        bool foundOne = false;
+        for (int i = 0; i < sfx_smallExplosionList.Length; i++) {
+            if (!sfx_smallExplosionList[i].activeSelf && !foundOne) {
+                temp = sfx_smallExplosionList[i];
+                foundOne = true;
+            }
+        }
+        return temp;
+    }
 
 	void Update () {
 		switch (matchPhase) {
 		case MatchPhase.StartMatch:
-			// Create/Restart the stat tracker
-			CreateStatManager();
-			
-			// Get the level spawn locations
-			GetLevelSpawnLocations();
-			
-			// Create the player objects
-			CreatePlayers();
+            if (!initMatchFinished) {
+                // Create/Restart the stat tracker
+                CreateStatManager();
 
-			matchPhase = MatchPhase.InSession;
+                // Get the level spawn locations
+                GetLevelSpawnLocations();
+
+                // Create the player objects
+                CreatePlayers();
+
+                initMatchFinished = true;
+            }
+            // Create the Map introduction here
+			//matchPhase = MatchPhase.InSession;
 			break;
 		case MatchPhase.InSession:
 			SimulateRounds();
@@ -288,15 +307,31 @@ public class MatchManager : MonoBehaviour {
 	}
 
 	void DelayStartOfRound() {
-		roundCount++;
+        //roundCount++;
 
-		foreach (GameObject activeProjectile in GameObject.FindGameObjectsWithTag("Projectile")) {
+		/*foreach (GameObject activeProjectile in GameObject.FindGameObjectsWithTag("Projectile")) {
 			activeProjectile.SetActive(false);
-		}
+		}*/
 
-		roundPhase = RoundPhase.StartRound;
-		delayedRoundEnd = false;
+        // Show end of round display and on any button press goto next round, turn off controls for that
+        MatchRoundResultsObject.SetActive(true);
+        MatchRoundResultsObject.GetComponent<MatchRoundResultsScript>().initRoundTotals(playerObjectList);
+		
+        //roundPhase = RoundPhase.StartRound;
+		//delayedRoundEnd = false;
 	}
+
+    public void EndingRoundAfterDelay() {
+        roundCount++;
+
+        foreach (GameObject activeProjectile in GameObject.FindGameObjectsWithTag("Projectile")) {
+            activeProjectile.SetActive(false);
+        }
+
+        roundPhase = RoundPhase.StartRound;
+
+        delayedRoundEnd = false;
+    }
 
 	public void SignalRoundStart() {
 		foreach (GameObject playerObj in playerObjectList) {

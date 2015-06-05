@@ -161,6 +161,15 @@
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/Applications/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
+ <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+ <HintPath>E:/Unity/Projects/ArenaShmup/Assets/Imports/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+ </Reference>
+ <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
+ <HintPath>E:/Unity/Projects/ArenaShmup/Assets/Imports/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityVS.VersionSpecific">
+ <HintPath>E:/Unity/Projects/ArenaShmup/Assets/Imports/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>D:/Applications/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>

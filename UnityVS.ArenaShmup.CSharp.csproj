@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{476C278C-5CD8-2E4D-3444-959C37E67E6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace></RootNamespace>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityVersion>5.0.1f1</UnityVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Imports\InControl\OuyaEverywhere\OuyaEverywhereDevice.cs" />
+    <Compile Include="Assets\Imports\InControl\OuyaEverywhere\OuyaEverywhereDeviceManager.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\BindingListenOptions.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\BindingSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\BindingSourceListener.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\BindingSourceType.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\DeviceBindingSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\DeviceBindingSourceListener.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\Key.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\KeyBindingSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\KeyBindingSourceListener.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\KeyCombo.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\KeyInfo.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\Mouse.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\MouseBindingSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\MouseBindingSourceListener.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\PlayerAction.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\PlayerActionSet.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\PlayerOneAxisAction.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Binding\PlayerTwoAxisAction.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Compatibility\HeaderAttribute.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Compatibility\RangeAttribute.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Compatibility\SpaceAttribute.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Components\InControlManager.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Control\IInputControl.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Control\InputControl.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Control\InputControlBase.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Control\InputControlMapping.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Control\InputControlSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Control\InputControlState.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Control\InputControlType.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Control\InputRange.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Control\OneAxisInputControl.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Control\TwoAxisInputControl.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Debug\InControlException.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Debug\Logger.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Device\InputDevice.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Device\InputDeviceManager.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\GUI\InControlInputModule.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\InputManager.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Touch\Controls\TouchButtonControl.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Touch\Controls\TouchStickControl.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Touch\Controls\TouchSwipeControl.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Touch\Controls\TouchTrackControl.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Touch\Touch.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Touch\TouchControl.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Touch\TouchControlAnchor.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Touch\TouchManager.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Touch\TouchSprite.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Touch\TouchUnitType.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Touch\TouchUtility.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\ControlSources\UnityAnalogSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\ControlSources\UnityButtonSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\ControlSources\UnityGyroAxisSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\ControlSources\UnityKeyCodeAxisSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\ControlSources\UnityKeyCodeComboSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\ControlSources\UnityKeyCodeSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\ControlSources\UnityMouseAxisSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\ControlSources\UnityMouseButtonSource.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\CustomInputDeviceProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\AmazonFireTVProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\AmazonFireTVRemoteProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\AndroidTVProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\AndroidTVRemoteProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\AppleMFiProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\ExecutionerXProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\GameStickLinuxProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\GameStickProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\GenericAndroidProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\GenericBlackberryProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\GenericLinuxProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\GoogleNexusPlayerProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\GoogleNexusPlayerRemoteProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\GreenThrottleAtlasAndroidProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\HamaBlackForceWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechF310LinuxProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechF310ModeDMacProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechF310ModeDWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechF310ModeXMacProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechF310ModeXWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechF510LinuxProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechF510WinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechF710LinuxProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechF710MacProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechF710ModeDWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechF710ModeXWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechRumblePad2MacProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechRumblePad2WinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\LogitechWingManWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\MaxFireBlaze5WinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\MogaProLinuxProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\MogaProMacProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\MogaProWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\NVidiaShieldAndroidProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\NVidiaShieldWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\NatecGenesisP44WinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\OuyaLinuxProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\OuyaWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation2WinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation3AndroidProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation3BWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation3LinuxProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation3MacProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation3ShenghicWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation3WinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation4AndroidProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation4LinuxProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation4MacBTProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation4MacUSBProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation4Profile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStation4WinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\PlayStationVitaPSMProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\SamsungGP20AndroidProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\SpeedlinkStrikeMacProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\SpeedlinkStrikeWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\SteelSeriesFreeLinuxProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\SteelSeriesFreeMacProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\SteelSeriesFreeWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\ValveStreamingWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\Xbox360AndroidProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\Xbox360LinuxProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\Xbox360MacProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\Xbox360WinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\XboxOneMacProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\XboxOneProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\DeviceProfiles\XboxOneWinProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\InputDeviceProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\UnityInputDevice.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\UnityInputDeviceManager.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\UnityInputDeviceProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\UnityInputDeviceProfileList.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Unity\UnknownUnityDeviceProfile.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Utility\SingletonMonoBehavior.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\Utility\Utility.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\VersionInfo.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\XInput\XInputDevice.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\XInput\XInputDeviceManager.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\XInput\XInputDotNetPure\GamePad.cs" />
+    <Compile Include="Assets\Imports\InControl\Source\XInput\XInputDotNetPure\Utils.cs" />
+    <Compile Include="Assets\Imports\InControl\Test\TestInputManager.cs" />
+    <Compile Include="Assets\Imports\Nebula Parallax\TestCamera.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\BloomOptimized.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\BlurOptimized.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\CameraMotionBlur.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionCurves.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionLookup.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\ContrastEnhance.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\ContrastStretch.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\CreaseShading.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\DepthOfField.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\DepthOfFieldDeprecated.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Fisheye.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\GlobalFog.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Grayscale.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\ImageEffectBase.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\ImageEffects.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\MotionBlur.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndGrain.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndScratches.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsHelper.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Quads.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\ScreenOverlay.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientObscurance.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientOcclusion.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\SunShafts.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\TiltShift.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraTracking.cs" />
+    <Compile Include="Assets\Scripts\Camera\FakeLOD_GaussianBlur.cs" />
+    <Compile Include="Assets\Scripts\Camera\MatchCameraOrthoSize.cs" />
+    <Compile Include="Assets\Scripts\Camera\ParallaxObject.cs" />
+    <Compile Include="Assets\Scripts\Camera\ParallaxQuad.cs" />
+    <Compile Include="Assets\Scripts\Camera\ScreenShake.cs" />
+    <Compile Include="Assets\Scripts\Data\Character.cs" />
+    <Compile Include="Assets\Scripts\Data\Player.cs" />
+    <Compile Include="Assets\Scripts\Data\Profile.cs" />
+    <Compile Include="Assets\Scripts\Front End\ControllerAssignment.cs" />
+    <Compile Include="Assets\Scripts\Front End\DisplayRoundTypeAndGoal.cs" />
+    <Compile Include="Assets\Scripts\Front End\DontDestroyOnLoad.cs" />
+    <Compile Include="Assets\Scripts\Front End\DontDestroyOnLoadAndNoPlayOnCombat.cs" />
+    <Compile Include="Assets\Scripts\Front End\MenuManagement.cs" />
+    <Compile Include="Assets\Scripts\Front End\PlayMenuSounds.cs" />
+    <Compile Include="Assets\Scripts\Front End\PlayerPanelManagment.cs" />
+    <Compile Include="Assets\Scripts\Front End\PulseText.cs" />
+    <Compile Include="Assets\Scripts\Front End\ReadyManager.cs" />
+    <Compile Include="Assets\Scripts\Front End\StartGameButtonPress.cs" />
+    <Compile Include="Assets\Scripts\Front End\StopPlayOnCombat.cs" />
+    <Compile Include="Assets\Scripts\GUI\MatchCountdownScript.cs" />
+    <Compile Include="Assets\Scripts\GUI\MatchIntroScript.cs" />
+    <Compile Include="Assets\Scripts\GUI\MatchResultsScript.cs" />
+    <Compile Include="Assets\Scripts\GUI\MatchRoundResultsScript.cs" />
+    <Compile Include="Assets\Scripts\InputManagers\ActorActionSet.cs" />
+    <Compile Include="Assets\Scripts\InputManagers\ActorInputManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\MatchManager.cs" />
+    <Compile Include="Assets\Scripts\Match Data\MatchStats.cs" />
+    <Compile Include="Assets\Scripts\Match Data\PlayerMatchStats.cs" />
+    <Compile Include="Assets\Scripts\Match Data\TeamStats.cs" />
+    <Compile Include="Assets\Scripts\ObjectScripts\AstroidRotation.cs" />
+    <Compile Include="Assets\Scripts\ObjectScripts\DestroyAfterSetTime.cs" />
+    <Compile Include="Assets\Scripts\ObjectScripts\DestructableObject.cs" />
+    <Compile Include="Assets\Scripts\ObjectScripts\DisableAfterSetTime.cs" />
+    <Compile Include="Assets\Scripts\ObjectScripts\FadeTextOut.cs" />
+    <Compile Include="Assets\Scripts\ObjectScripts\FloatingText.cs" />
+    <Compile Include="Assets\Scripts\ObjectScripts\ObjectCollision.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerCollision.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerFacingDirection.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerMovementManager.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\projectile_destroy.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\projectile_move.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\projectile_shakeScreenOnDetonate.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\projectile_stats.cs" />
+    <Compile Include="Assets\Scripts\RenderWorkArounds\TrailRendererSortingLayerFix.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Imports\InControl\Readme\README.txt" />
+    <None Include="Assets\Imports\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionEffect.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\GrayscaleEffect.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrain.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\TwirlEffect.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\VortexEffect.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+    <None Include="Assets\Imports\Standard Assets\Effects\Projectors\Guidelines.txt" />
+    <None Include="Assets\Imports\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\Imports\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
+</Project>

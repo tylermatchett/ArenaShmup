@@ -10,6 +10,7 @@ public class Character : MonoBehaviour {
 	public string Ability;
 	public GameObject characterPrefab;
 	public Sprite displayPortrait;
+    public bool unlocked = false;
 
 	[Header ("Character Sayings")]
 	public List<string> roundWinWords = new List<string>();

@@ -20,17 +20,48 @@ public class PlayerMovementManager : MonoBehaviour {
 	[Header ("Player Movement")]
 	public float speed = 75f;
 	public float BoostForce = 25f;
-	public float drag = 0.9f;
+    public float drag = 0.9f;
+    
+    public AudioClip ThrusterSFX;
+    public AudioClip BoostSFX;
+    AudioSource audio;
 
 	Rigidbody2D rigid;
+
+    //bool boostAvailable = true;
+    //public float boostTotalCooldown = 0.15f;
+    //public float boostTotalInvinsibilityTime = 0f;
+    //float boostTimer = 0f;
 
 	void Start() {
 		rigid = GetComponent<Rigidbody2D>();
 		playerManager = GetComponent<PlayerManager>();
+        audio = GetComponent<AudioSource>();
+        audio.volume = GameManager.Instance.Volume_SoundEffects * GameManager.Instance.Volume_Master;
 	}
 
 	void Update () {
+        //if (!boostAvailable) {
+        //    boostTimer += Time.deltaTime;
+        //    if (boostTimer >= boostTotalCooldown) {
+        //        boostTimer = 0f;
+        //        boostAvailable = true;
+        //    }
+        //}
+
 		if (playerManager.playerState != PlayerManager.PlayerState.Paused) {
+            if (Direction.magnitude > 0.15f) {
+                if (!audio.isPlaying) {
+                    audio.clip = ThrusterSFX;
+                    audio.loop = true;
+                    audio.Play();
+                }
+            }
+
+            if ((audio.isPlaying) && (Direction.magnitude < 0.15f)) {
+                audio.Stop();
+            }
+
 			CalculateBounds ();
 			rigid.velocity += Direction * speed * GameManager.Instance.globalSpeedModifier * Time.deltaTime;
 			CalculateBoundsForce ();
@@ -69,8 +100,16 @@ public class PlayerMovementManager : MonoBehaviour {
 		}
 	}
 
-	void Boost() {
-		rigid.AddForce(Direction * BoostForce * GameManager.Instance.globalSpeedModifier, ForceMode2D.Impulse);
+    void Boost() {
+        //if (boostAvailable) {
+            audio.clip = BoostSFX;
+            audio.loop = false;
+            audio.Play();
+
+            //boostAvailable = false;
+
+            rigid.AddForce(Direction * BoostForce * GameManager.Instance.globalSpeedModifier, ForceMode2D.Impulse);
+        //}
 	}
 	
 	void CalculateBounds() {

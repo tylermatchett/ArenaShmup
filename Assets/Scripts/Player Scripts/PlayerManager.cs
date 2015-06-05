@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour {
 	public Player player;
 	MatchManager matchManager;
 	public PlayerMatchStats playerMatchStats;
+    public AudioClip ExplodingSFX;
 	ScreenShake shakeCamera;
 
 	public enum PlayerState {
@@ -132,6 +133,13 @@ public class PlayerManager : MonoBehaviour {
 		// Spawn explosion
 		Instantiate(DeathExplosionFX, gameObject.transform.position, gameObject.transform.rotation);
 		// Have the character cry out in death
+
+        GameObject sfxTemp = GameObject.FindGameObjectWithTag("MatchManager").GetComponent<MatchManager>().GetSmallExplosionSFXInstance();
+        sfxTemp.transform.position = transform.position;
+        sfxTemp.SetActive(true);
+        sfxTemp.GetComponent<AudioSource>().clip = ExplodingSFX;
+        sfxTemp.GetComponent<AudioSource>().Play();
+
 		// Record Death for the team and player, and record the kill for the enemy player and enemy team
 		playerMatchStats.deaths++;
 		lastPlayerToHitMe.GetComponent<PlayerManager>().playerMatchStats.kills++;

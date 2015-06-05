@@ -7,8 +7,12 @@ using System.Linq;
 public class Weapon : MonoBehaviour {
 	[Header ("Name and Projectile")]
 	public GameObject bulletPrefab;
-	public string Name;
-	public GameObject playerObj;
+    public string Name;
+    public GameObject playerObj;
+    public AudioClip shotSFX;
+    public AudioClip emptyClipSFX;
+
+    AudioSource audio;
 	
 	[Header ("Cooldowns")]
 	public float totalCooldown;
@@ -72,6 +76,9 @@ public class Weapon : MonoBehaviour {
 		initializeBulletPool();
 		GetBulletSpawnLocations();
 
+        audio = transform.parent.GetComponent<AudioSource>();
+        audio.volume = GameManager.Instance.Volume_SoundEffects * GameManager.Instance.Volume_Master;
+        audio.clip = shotSFX;
 		//shakeCamera = Camera.main.GetComponent<ScreenShake>();
 	}
 
@@ -125,6 +132,11 @@ public class Weapon : MonoBehaviour {
 		}
 		
 		if (reloading) {
+            if (isFiring) {
+                // Play Empty Clip Sound
+                audio.clip = emptyClipSFX;
+                audio.Play();
+            }
 			reloadTime += Time.deltaTime;
 			if (reloadTime > reloadTimeTotal) {
 				reloadTime = 0f;
@@ -152,7 +164,17 @@ public class Weapon : MonoBehaviour {
 			// Empty the clip
 			fireRate += Time.deltaTime;
 			if (fireRate > fireRateTotal) {
-				// Fire a shot
+                audio.clip = shotSFX;
+                if (fireRateTotal < 0.01f) {
+                    if (burstShots == shotsPerBurst) {
+                        // only play the audio once per round
+                        audio.Play();
+                    }
+                } else {
+                    audio.Play();
+                }
+
+                // Fire a shot
 				Shoot();
 				
 				burstShots--;
@@ -191,11 +213,8 @@ public class Weapon : MonoBehaviour {
 	protected void Shoot() {
 		// Grab a bullet off of the bullet stack
 		GameObject tempBullet = GetFirstDisabledBullet();
-
-		//shakeCamera.Shake(3f, 0.025f);
 		
 		if (tempBullet != null) {
-			// TODO Maybe? add multiple spawn locations for bullets
 			tempBullet.transform.position = bulletSpawns[spawnLocationCounter % spawnLocationTotal].transform.position;
 			spawnLocationCounter++;
 			tempXSpread = Random.Range(-shotSpread, shotSpread);
