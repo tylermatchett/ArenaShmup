@@ -18,14 +18,14 @@
 
 		inputActions.Taunt.AddDefaultBinding(InControl.InputControlType.DPadUp);
 
-		inputActions.Melee.AddDefaultBinding(InControl.InputControlType.Action2);
-		inputActions.Melee.AddDefaultBinding(InControl.InputControlType.RightBumper);
+		//inputActions.Melee.AddDefaultBinding(InControl.InputControlType.Action2);
+		//inputActions.Melee.AddDefaultBinding(InControl.InputControlType.RightBumper);
 
 		inputActions.Ability.AddDefaultBinding(InControl.InputControlType.Action3);
 		inputActions.Ability.AddDefaultBinding(InControl.InputControlType.LeftTrigger);
 
 		inputActions.Reload.AddDefaultBinding(InControl.InputControlType.Action4);
-		inputActions.Reload.AddDefaultBinding(InControl.InputControlType.LeftBumper);
+        inputActions.Reload.AddDefaultBinding(InControl.InputControlType.RightBumper);
 		
 		inputActions.Move_Up.AddDefaultBinding(InControl.InputControlType.LeftStickUp);
 		inputActions.Move_Down.AddDefaultBinding(InControl.InputControlType.LeftStickDown);

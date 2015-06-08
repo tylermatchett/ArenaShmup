@@ -15,13 +15,13 @@ public class MatchIntroScript : MonoBehaviour {
 
     void Start() {
         mapName.text = MapName;
-        string temp = "";
+        string roundMode = "";
         if (GameManager.Instance.matchType == GameManager.MatchType.Kills) {
-            temp = "Kills";
+            roundMode = "Kills";
         } else {
-            temp = "Rounds";
+            roundMode = "Rounds";
         }
-        matchTypeAndGoal.text = "First to " + GameManager.Instance.matchGoal + " " + temp;
+        matchTypeAndGoal.text = "First to " + GameManager.Instance.matchGoal + " " + roundMode;
     }
 
 	void Update () {
@@ -41,5 +41,6 @@ public class MatchIntroScript : MonoBehaviour {
         matchTypeAndGoalobj.SetActive(false);
         pnlDarken.SetActive(false);
         matchCountDown.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

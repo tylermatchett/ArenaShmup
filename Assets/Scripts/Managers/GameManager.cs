@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour {
 		} 
 	}
 
+    public string ActiveState = "";
+
 	static public GameManager Instance {
 		get {
 			if (_instance == null) {
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void LoadState(string state) {
+        ActiveState = state;
 		Application.LoadLevel(state);
 	}
 

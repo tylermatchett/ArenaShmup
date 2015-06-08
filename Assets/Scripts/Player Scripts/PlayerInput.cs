@@ -3,9 +3,7 @@ using System.Collections;
 using InControl;
 
 public class PlayerInput : MonoBehaviour {
-
-	InputDevice device;
-	PlayerManager playerManager;
+    PlayerManager playerManager;
 
 	// TODO Remove the sendmessages and target specific player scripts
 	// or send all the data and just have all scripts reference the playermanager for the data they need
@@ -49,7 +47,7 @@ public class PlayerInput : MonoBehaviour {
 			gameObject.SendMessage("AbilityEnd", SendMessageOptions.DontRequireReceiver);
 		}
 		if (playerManager.player.profile.inputActions.Reload.WasPressed) {
-			gameObject.SendMessage("Reload", SendMessageOptions.DontRequireReceiver);
+            gameObject.BroadcastMessage("Reload", SendMessageOptions.DontRequireReceiver);
 		}
 		if (playerManager.player.profile.inputActions.Melee.WasPressed) {
 			gameObject.SendMessage("Melee", SendMessageOptions.DontRequireReceiver);

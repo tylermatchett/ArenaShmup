@@ -5,7 +5,7 @@ using System.Collections;
 public class PlayerManager : MonoBehaviour {
 
 	public Player player;
-	MatchManager matchManager;
+	public MatchManager matchManager;
 	public PlayerMatchStats playerMatchStats;
     public AudioClip ExplodingSFX;
 	ScreenShake shakeCamera;

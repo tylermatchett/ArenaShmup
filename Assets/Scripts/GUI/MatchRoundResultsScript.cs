@@ -18,6 +18,7 @@ public class MatchRoundResultsScript : MonoBehaviour {
     List<int> playerKillsLastRound = new List<int>() { 0, 0, 0, 0 };
     List<int> playerKillsDifference = new List<int>() { 0, 0, 0, 0 };
 
+    public Text RoundGoals;
     public GameObject continueInstructions;
     public GameObject endOfRoundUI;
     public GameObject ScreenDarkener;
@@ -30,6 +31,16 @@ public class MatchRoundResultsScript : MonoBehaviour {
             playerStatsList[i].text = "";
         }
         ScreenDarkener.SetActive(true);
+        
+        string roundMode = "";
+        if (GameManager.Instance.matchType == GameManager.MatchType.Kills) {
+            roundMode = "Kills";
+        }
+        else {
+            roundMode = "Rounds";
+        }
+
+        RoundGoals.text = "First to " + GameManager.Instance.matchGoal + " " + roundMode;
     }
 
     void Update() {

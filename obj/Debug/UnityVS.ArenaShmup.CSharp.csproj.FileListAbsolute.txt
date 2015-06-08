@@ -1,0 +1,13 @@
+E:\Unity\Projects\ArenaShmup\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+E:\Unity\Projects\ArenaShmup\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+E:\Unity\Projects\ArenaShmup\Temp\UnityVS_bin\Debug\UnityEditor.dll
+E:\Unity\Projects\ArenaShmup\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+E:\Unity\Projects\ArenaShmup\Temp\UnityVS_bin\Debug\UnityEngine.dll
+E:\Unity\Projects\ArenaShmup\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+E:\Unity\Projects\ArenaShmup\Temp\UnityVS_bin\Debug\UnityEngine.xml
+E:\Unity\Projects\ArenaShmup\Temp\UnityVS_bin\Debug\UnityEditor.xml
+E:\Unity\Projects\ArenaShmup\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+E:\Unity\Projects\ArenaShmup\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
+E:\Unity\Projects\ArenaShmup\obj\Debug\UnityVS.ArenaShmup.CSharp.csprojResolveAssemblyReference.cache
+E:\Unity\Projects\ArenaShmup\obj\Debug\Assembly-CSharp.dll
+E:\Unity\Projects\ArenaShmup\obj\Debug\Assembly-CSharp.pdb

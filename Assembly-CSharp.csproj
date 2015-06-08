@@ -249,6 +249,7 @@
      <Compile Include="Assets\Scripts\GUI\MatchIntroScript.cs" />
      <Compile Include="Assets\Scripts\GUI\MatchResultsScript.cs" />
      <Compile Include="Assets\Scripts\GUI\MatchRoundResultsScript.cs" />
+     <Compile Include="Assets\Scripts\GUI\PauseMenuManager.cs" />
      <Compile Include="Assets\Scripts\InputManagers\ActorActionSet.cs" />
      <Compile Include="Assets\Scripts\InputManagers\ActorInputManager.cs" />
      <Compile Include="Assets\Scripts\Managers\GameManager.cs" />

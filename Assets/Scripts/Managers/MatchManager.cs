@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using InControl;
 
 public class MatchManager : MonoBehaviour {
 	// Elimination Game Mode (TODO Rename this Match Manager to Elimination Match Manager)
@@ -52,6 +53,7 @@ public class MatchManager : MonoBehaviour {
 		EndMatch	// Match is over, goto victory scene
 	}
 	public MatchPhase matchPhase;
+    MatchPhase MatchStateBeforePause;
 
 	[Header ("Player UI References")]
 	public List<GameObject> playerPanelList = new List<GameObject>();
@@ -63,9 +65,13 @@ public class MatchManager : MonoBehaviour {
 	public GameObject[] characterTextList;
     public GameObject[] sfx_smallExplosionList;
     public GameObject MatchRoundResultsObject;
+    public GameObject MatchIntroObject;
+    public GameObject PauseMenu;
 
     bool initMatchFinished = false;
 	bool delayedRoundEnd = false;
+
+    int finalTeamRemaining;
 
 	void Start () {
 		matchPhase = MatchPhase.StartMatch;
@@ -97,6 +103,23 @@ public class MatchManager : MonoBehaviour {
     }
 
 	void Update () {
+        InputDevice device = InputManager.ActiveDevice;
+
+        if (device.MenuWasPressed) {
+            if (!MatchIntroObject.activeSelf) {
+                PauseMenu.SetActive(true);
+                // Pause the players
+                GameObject[] tempPlayerList = GameObject.FindGameObjectsWithTag("Player");
+                foreach (GameObject g in tempPlayerList) {
+                    if (g.GetComponent<PlayerManager>().playerState == PlayerManager.PlayerState.Alive) {
+                        g.GetComponent<PlayerManager>().playerState = PlayerManager.PlayerState.Paused;
+                    }
+                }
+                MatchStateBeforePause = matchPhase;
+                matchPhase = MatchPhase.Paused;
+            }
+        }
+
 		switch (matchPhase) {
 		case MatchPhase.StartMatch:
             if (!initMatchFinished) {
@@ -133,11 +156,13 @@ public class MatchManager : MonoBehaviour {
 			MatchStatsTracker.GetDebugReport();
 		}
 
-		if (GameManager.Instance.slowTime) {
-			Time.timeScale = GameManager.Instance.timeScale;
-		} else {
-			Time.timeScale = 1f;
-		}
+        if (matchPhase != MatchPhase.Paused) {
+		    if (GameManager.Instance.slowTime) {
+			    Time.timeScale = GameManager.Instance.timeScale;
+		    } else {
+			    Time.timeScale = 1f;
+		    }
+        }
 	}
 
 	// Round update
@@ -171,6 +196,10 @@ public class MatchManager : MonoBehaviour {
 		// Store the match rankings and stats in the game manager
 		// change the scene to the end game scene
 	}
+
+    void ShowEndMatchStats() {
+        MatchResultsObject.GetComponent<MatchResultsScript>().initResults(playerObjectList, finalTeamRemaining);
+    }
 
 
 	void CreateStatManager() {
@@ -288,8 +317,9 @@ public class MatchManager : MonoBehaviour {
 			if (MatchStatsTracker.TeamWon(lastTeamRemaining)) {
 				// There was a winner!
 				// activate the match results
-				MatchResultsObject.GetComponent<MatchResultsScript>().initResults(playerObjectList, lastTeamRemaining);
-				// feed the match results the data
+                // feed the match results the data
+                finalTeamRemaining = lastTeamRemaining;
+                Invoke("ShowEndMatchStats", 2f);
 
 				// Change the state of the match
 				matchPhase = MatchPhase.EndMatch;
@@ -307,18 +337,11 @@ public class MatchManager : MonoBehaviour {
 	}
 
 	void DelayStartOfRound() {
-        //roundCount++;
-
-		/*foreach (GameObject activeProjectile in GameObject.FindGameObjectsWithTag("Projectile")) {
-			activeProjectile.SetActive(false);
-		}*/
-
         // Show end of round display and on any button press goto next round, turn off controls for that
-        MatchRoundResultsObject.SetActive(true);
-        MatchRoundResultsObject.GetComponent<MatchRoundResultsScript>().initRoundTotals(playerObjectList);
-		
-        //roundPhase = RoundPhase.StartRound;
-		//delayedRoundEnd = false;
+        if (matchPhase != MatchPhase.EndMatch) {
+            MatchRoundResultsObject.SetActive(true);
+            MatchRoundResultsObject.GetComponent<MatchRoundResultsScript>().initRoundTotals(playerObjectList);
+        }
 	}
 
     public void EndingRoundAfterDelay() {
@@ -338,4 +361,8 @@ public class MatchManager : MonoBehaviour {
 			playerObj.SendMessage("MatchStarting", SendMessageOptions.DontRequireReceiver);
 		}
 	}
+
+    public void UnPauseMatch() {
+        matchPhase = MatchStateBeforePause;
+    }
 }

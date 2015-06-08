@@ -8,7 +8,8 @@ public class MatchResultsScript : MonoBehaviour {
 	public GameObject MatchCountdown;
 	public GameObject CountdownText;
 
-	public GameObject resultsPanel;
+    public GameObject resultsPanel;
+    public GameObject ScreenDarkener;
 	public Text teamText;
 	public Image teamBackground;
 	public List<Text> playerNameList = new List<Text>();
@@ -42,6 +43,8 @@ public class MatchResultsScript : MonoBehaviour {
 
 		MatchCountdown.SetActive(false);
 		CountdownText.SetActive(false);
+
+        ScreenDarkener.SetActive(true);
 
 		for (int i = 0; i < players.Count; i++) {
 			playerNameList[i].text = players[i].GetComponent<PlayerManager>().player.character.Name;
