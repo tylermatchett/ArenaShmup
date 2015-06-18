@@ -1,0 +1,97 @@
+Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960 (ID=0x1401)
+    Vendor:   NVIDIA
+    VRAM:     1930 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Unity\Projects\ArenaShmup\Build\Prototype_PreAlpha0.0.7.3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Unity\Projects\ArenaShmup\Build\Prototype_PreAlpha0.0.7.3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Unity\Projects\ArenaShmup\Build\Prototype_PreAlpha0.0.7.3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Unity\Projects\ArenaShmup\Build\Prototype_PreAlpha0.0.7.3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Unity\Projects\ArenaShmup\Build\Prototype_PreAlpha0.0.7.3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Unity\Projects\ArenaShmup\Build\Prototype_PreAlpha0.0.7.3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.031 seconds
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: E:\Unity\Projects\ArenaShmup\Build\Prototype_PreAlpha0.0.7.3_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Unity\Projects\ArenaShmup\Build\Prototype_PreAlpha0.0.7.3_Data\Managed\System.dll (this message is harmless)
+<RI.Hid> Failed to create device file:
+ 1f A device attached to the system is not functioning.
+
+ 
+(Filename:  Line: 54)
+
+Joystick connected ("Wireless Controller").
+ 
+(Filename:  Line: 1353)
+
+DebugLog: Creating A New Game Manager
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1713)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.033433 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 767.
+Total: 0.443517 ms (FindLiveObjects: 0.032777 ms CreateObjectMapping: 0.021766 ms MarkObjects: 0.384108 ms  DeleteObjects: 0.004353 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.487524 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 984.
+Total: 0.632498 ms (FindLiveObjects: 0.037386 ms CreateObjectMapping: 0.043020 ms MarkObjects: 0.545178 ms  DeleteObjects: 0.006657 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.512363 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 703.
+Total: 0.744402 ms (FindLiveObjects: 0.041483 ms CreateObjectMapping: 0.044812 ms MarkObjects: 0.592807 ms  DeleteObjects: 0.064274 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.345697 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 2906.
+Total: 0.748499 ms (FindLiveObjects: 0.087320 ms CreateObjectMapping: 0.037642 ms MarkObjects: 0.613549 ms  DeleteObjects: 0.009730 ms)
+
+Start Round - Round 1 Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Start Round - Round 2 Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Start Round - Round 3 Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Start Round - Round 4 Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Start Round - Round 5 Started
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+Match Won by Team 0 Through Kills.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1713)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.884948 ms
+
+Unloading 91 unused Assets to reduce memory usage. Loaded Objects now: 774.
+Total: 0.775899 ms (FindLiveObjects: 0.046093 ms CreateObjectMapping: 0.043276 ms MarkObjects: 0.591271 ms  DeleteObjects: 0.094490 ms)
+
