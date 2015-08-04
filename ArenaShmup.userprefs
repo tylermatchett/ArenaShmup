@@ -1,10 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\BiowareStyleGamePrototype\Assets\Scripts\PlayerScripts\PlayerInput.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="D:\CardSaga\cardsaga-alpha\Assets\CardSagaProject\StorySystem\Views\View_ProtagonistChronology.cs">
     <Files>
-      <File FileName="..\BiowareStyleGamePrototype\Assets\Scripts\PlayerScripts\TalkController.cs" Line="59" Column="33" />
-      <File FileName="..\BiowareStyleGamePrototype\Assets\Scripts\PlayerScripts\PlayerInput.cs" Line="51" Column="39" />
-      <File FileName="..\BiowareStyleGamePrototype\Assets\Scripts\DialogueSystem\DialogueManager.cs" Line="132" Column="95" />
+      <File FileName="D:\CardSaga\cardsaga-alpha\Assets\CardSagaProject\StorySystem\Views\View_ProtagonistChronology.cs" Line="100" Column="138" />
+      <File FileName="D:\CardSaga\cardsaga-alpha\Assets\CardSagaProject\StorySystem\Views\View_ProtagonistChronologicEvent.cs" Line="42" Column="38" />
+      <File FileName="D:\CardSaga\cardsaga-alpha\Assets\CardSagaProject\StorySystem\Controllers\ProtagonistChronologyController.cs" Line="48" Column="57" />
+      <File FileName="D:\CardSaga\cardsaga-alpha\Assets\CardSagaProject\StorySystem\Controllers\ProtagonistChronologicEventController.cs" Line="1" Column="1" />
+      <File FileName="D:\CardSaga\cardsaga-alpha\Assets\uFrame\MVVM\Framework\MVVM\Views\ViewResolver.cs" Line="35" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
